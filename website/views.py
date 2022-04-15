@@ -22,3 +22,13 @@ def home():
             flash('Note added!', category='success')
             
     return render_template("home.html", user=current_user)
+
+@views.route('/update')
+@login_required
+def update():
+    return render_template("update.html", user=current_user)
+
+@views.route('/content')
+@login_required
+def content():
+    return render_template("content.html", user=current_user)
