@@ -1,5 +1,11 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %}
+{% block config %}
+from configparser import ConfigParser
+file = 'config.txt'
+config = ConfigParser()
+config.read(file)
+{% endblock %}
+
 {% block content %}
-<br>
-<h1 align="center"> HomePage </h1>
+<h1 align="center">{% print(config[dark][status]) %}</h1>
 {% endblock %}
