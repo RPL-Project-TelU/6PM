@@ -2,6 +2,7 @@ from unicodedata import category
 from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
 from . import db
+import json
 
 from website.models import Note
 
@@ -22,3 +23,23 @@ def home():
             flash('Note added!', category='success')
             
     return render_template("home.html", user=current_user)
+
+@views.route('/team', methods=['GET', 'POST'])
+@login_required
+def team():
+    if request.method == 'POST':
+        Games = request.form.getlist('game')
+        Platform = request.form.getlist('platform')
+        tteam = request.form.get('name')
+        Description = request.form.get('deskripsi')
+
+        data = {
+            "Game": Games,
+            "Platform": Platform, 
+            "Team Name": tteam,
+            "Description": Description
+        }
+
+        with open("file.json", "w") as file:
+            json.dump(data, file, indent=4)
+    return render_template("team.html", user=current_user)
