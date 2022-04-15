@@ -33,7 +33,9 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
-
+@auth.route('/search')
+def Search():
+    return rediderct(url_for('auth.search'))
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def sign_up():

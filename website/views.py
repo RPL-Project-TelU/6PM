@@ -7,6 +7,7 @@ from website.models import Note
 
 views = Blueprint('views', __name__)
 
+
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
@@ -22,3 +23,29 @@ def home():
             flash('Note added!', category='success')
             
     return render_template("home.html", user=current_user)
+
+@views.route('/turnament')
+
+def turnamen():
+    game = {
+    "Counter Strike: Global Offensive": {
+        "jadwal": "Selasa, Rabu, Kamis (April 2022 - Mei 2022)",
+        "jenis": "FPS",
+    },
+    "Valorant": {
+        "jadwal": "Jumat - Minggu (Maret 2022 - Mei 2022)",
+        "jenis": "FPS", 
+    },
+    "PES": {
+        "jadwal": "Kamis - Minggu (Mei 2022 - Juni 2022)",
+        "jenis": "Football (Sports)",
+    },
+}
+    
+    query = request.args.get('query')
+    data = game
+    if query != None:
+        data = {k:v for (k,v) in data.items() if query.lower() in k.lower()}
+    return render_template("turnamen.html", data=data, query=query, datacount=len(data))
+    
+    

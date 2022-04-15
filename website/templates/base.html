@@ -28,6 +28,11 @@
                     {% if user.is_authenticated %}
                     <a class="nav-item nav-link" id="home" href="/">Home</a>
                     <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    <a class="nav-item nav-link" id="turnamen" href="/turnamen">Turnamen</a>
+                    <form class="d-flex" action="" method="get">
+                        <input class="form-control me-2" type="search" name="query" placeholder="Nama Game" aria-label="search">
+                        <button class="btn btn-outline-light" type="submit">search</button>
+                    </form>
                     {% else %}
                     <a class="nav-item nav-link" id="login" href="/login">Login</a>
                     <a class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
@@ -36,6 +41,7 @@
                 </div>
             </div>
         </nav>
+        
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
