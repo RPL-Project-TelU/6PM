@@ -1,3 +1,5 @@
+from textwrap import indent
+from tkinter import N
 from unicodedata import category
 from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
@@ -32,14 +34,16 @@ def team():
         Platform = request.form.getlist('platform')
         tteam = request.form.get('name')
         Description = request.form.get('deskripsi')
-
-        data = {
-            "Game": Games,
-            "Platform": Platform, 
-            "Team Name": tteam,
-            "Description": Description
-        }
-
-        with open("file.json", "w") as file:
-            json.dump(data, file, indent=4)
+  
+        with open(r"file.json", "a+") as file:
+            data = {}
+            data['Team'] = []
+            data['Team'].append({
+                "Game": Games,
+                "Platform": Platform, 
+                "Team Name": tteam,
+                "Description": Description
+            })
+            file.write(json.dumps(data, indent=2))
+            file.write("\n")
     return render_template("team.html", user=current_user)

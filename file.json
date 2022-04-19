@@ -1,10 +1,14 @@
 {
-    "Game": [
-        "Clash Royale"
-    ],
-    "Platform": [
-        "Console"
-    ],
-    "Team Name": "Arialdi Rahmadi Putra",
-    "Description": "test"
+  "Team": [
+    {
+      "Game": [
+        "PUBG"
+      ],
+      "Platform": [
+        "PC"
+      ],
+      "Team Name": "Arialdi",
+      "Description": "saya hadir"
+    }
+  ]
 }
