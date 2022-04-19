@@ -21,8 +21,3 @@ def home():
             db.session.commit()
             flash('Note added!', category='success')
     return render_template("home.html", user=current_user)  
-
-@views.route('/profile')
-@login_required
-def profile():
-    return render_template("profile.html", user=current_user)
