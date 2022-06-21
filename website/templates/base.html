@@ -15,8 +15,33 @@
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous"
         />
-        <title>{% block title %}Home{% endblock %}</title>
+        
+        <title>{% block title %}{% endblock %}</title>
     </head>
+
+    <style>
+        * {
+            transition: background-color 1s;
+        }
+        body {
+            height: 100vh;
+            background-color: #d4d4d4;
+        }
+        body.dark-theme {
+            background-color: #202945;
+        }
+        .card.dark-theme {
+            background-color: #374368;
+            color: #d4d4d4;
+        }
+        form.dark-theme{
+            color: #d4d4d4;
+        }
+        h3.dark-theme{
+            color: white;
+        }
+        
+    </style>
 
     <body class="mb-3">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -32,9 +57,9 @@
                     <a class="nav-item nav-link" id="login" href="/login">Login</a>
                     <a class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
                     {% endif %}
-                    
                 </div>
             </div>
+            <button role="button" class="btn btn-lg btn-dark" id="theme_toggle"></button>
         </nav>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -79,6 +104,57 @@
         type="text/javascript"
         src="{{ url_for('static', filename='index.js') }}"
         ></script>
+
+        <script>
+            var dark_mode = '{{dark}}';
+            $(document).ready(function () {
+            $('#theme_toggle').on('click', function () {
+            if ($('body').hasClass('dark-theme')) {
+                $(this).toggleClass('btn-light');
+                $(this).addClass('btn-dark');
+                $('h1').html("Light Mode");
+                $('body').toggleClass('dark-theme');
+                $('.card').toggleClass('dark-theme');
+                $('form').toggleClass('dark-theme');
+                $('h3').toggleClass('dark-theme');
+                $('#theme_toggle').html("Light Mode");
+            } else {
+                $(this).toggleClass('btn-light');
+                $(this).removeClass('btn-dark');
+                $('h1').html("Dark Mode");
+                $('body').toggleClass('dark-theme');
+                $('.card').toggleClass('dark-theme');
+                $('form').toggleClass('dark-theme');
+                $('h3').toggleClass('dark-theme');
+                $('#theme_toggle').html("Dark Mode");
+            }
+        })
+        //set interface to match localStorage
+        if (dark_mode == "on") {
+            $('#theme_toggle').removeClass('btn-dark');
+            $('#theme_toggle').addClass('btn-light');
+            $('body').addClass('dark-theme');
+            $('.card').addClass('dark-theme');
+            $('h1').html("Dark Mode");
+            $('#theme_toggle').html("Dark Mode");
+            $('form').addClass('dark-theme');
+            $('h3').addClass('dark-theme');
+            document.getElementById("theme_toggle").checked = true;
+        } else {
+            $('#theme_toggle').addClass('btn-dark');
+            $('#theme_toggle').removeClass('btn-light');
+            $('body').removeClass('dark-theme');
+            $('.card').removeClass('dark-theme');
+            $('form').removeClass('dark-theme');
+            $('h3').removeClass('dark-theme');
+            $('h1').html("Light Mode");
+            $('#theme_toggle').html("Light Mode");
+            document.getElementById("theme_toggle").checked = false;
+        };
+        
+        
+    });
+        </script>
 
     </body>
 </html>

@@ -1,9 +1,6 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %}
-{% block config %}
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-{% endblock %}
+
 
 {% block content %}
-<h1 align="center">{% print(config['dark']['key']) %}</h1>
+
 {% endblock %}
