@@ -1,21 +1,317 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %}
 {% block content %}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
-<form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
+
+<div class="container-fluid bg-primary px-0 px-md-5 mb-5" >
+  <div class="row align-items-center px-3">
+    <div class="col-lg-6 text-center text-lg-left">
+      <br>
+      <h4 class="text-white mb-4 mt-5 mt-lg-0 text-center">Lapak Esport</h4>
+      <h1 class="display-4 font-weight-bold text-white">
+        New Approach to Looking for Esport Team or Tournament 
+      </h1>
+      <p class="text-white mb-4">
+        Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed
+        sit. Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed
+        ipsum at ipsum nonumy amet. Clita lorem dolore sed stet et est justo
+        dolore.
+      </p>
+      <a href="" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
+    </div>
+    <div class="col-lg-6 text-center text-lg-right">
+      <img class="img-fluid mt-3" src="https://asset-a.grid.id/crop/160x24:1457x856/700x0/photo/2019/07/30/2237111804.jpg" alt="" />
+    </div>
   </div>
-</form>
+  <br>
+</div>
+<!-- Header End -->
+
+<!-- Facilities Start -->
+<div class="">
+  <h2 class="text-center">News</h2>
+</div>  
+<div class="container-fluid pt-2">
+  <div class="container pb-3">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+              <img class="img-fluid mt-2" src="https://cdn.antaranews.com/cache/730x487/2021/11/22/Esports-Mobile-Game-Of-The-Year.jpg" alt="">
+              <h4>Free Fire</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+            <img class="img-fluid mt-2" src="https://cdn.antaranews.com/cache/360x240/2021/03/29/kNuoJsRspgv4Gdp0dysPgN23qS79tJQ8d5OOQW9L.jpg" alt="">
+            <h4>PUBG Mobile</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+            <img class="img-fluid mt-2" src="https://cdn.antaranews.com/cache/360x240/2021/03/29/kNuoJsRspgv4Gdp0dysPgN23qS79tJQ8d5OOQW9L.jpg" alt="">
+            <h4>Mobile Legend</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+            <img class="img-fluid mt-2" src="https://deluxe.news/wp-content/uploads/2022/04/Talon-Esports-unveils-Dota-2-deal-with-M88-Mansion.png" alt="">
+            <h4>League of Legend</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+            <img class="img-fluid mt-2" src="https://img.beritasatu.com/cache/investor/798x449-2/1580392248.jpg" alt="">
+            <h4>Dota 2</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pb-1">
+        <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
+          <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+          <div class="pl-1">
+            <img class="img-fluid mt-2" src="https://i.ytimg.com/vi/tuYymJQHeO8/maxresdefault.jpg" alt="">
+            <h4>Valorant</h4>
+            <p class="m-0">
+              Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
+              lorem amet elitr vero...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Facilities Start -->
+
+<!-- create team -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <img
+          class="img-fluid rounded mb-5 mb-lg-0"
+          src="https://media.esportsedition.com/wp-content/uploads/2018/10/Sumail.png"
+          alt=""
+        />
+      </div>
+      <div class="col-lg-7">
+        <p class="section-title pr-5">
+          <span class="pr-2">Looking for team or you can create our own Team</span>
+        </p>
+        <h1 class="mb-4">Create Team</h1>
+        <p>
+          Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
+          dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
+          Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
+          dolor
+        </p>
+        <div class="row pt-2 pb-4">
+          <div class="col-6 col-md-8">
+            <ul class="list-inline m-0">
+              <li class="py-2 border-top border-bottom">
+                <i class="fa fa-check text-primary mr-3"></i>Already Verified
+              </li>
+              <li class="py-2 border-bottom">
+                <i class="fa fa-check text-primary mr-3"></i>Responsible
+              </li>
+              <li class="py-2 border-bottom">
+                <i class="fa fa-check text-primary mr-3"></i>Be Active Owner
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="" class="btn btn-primary mt-2 py-2 px-4">Create</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End -->
+
+<!-- join Tournament Start -->
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div class="text-center pb-2">
+      <p class="section-title px-5">
+        <span class="px-2">Looking For Tournament</span>
+      </p>
+      <h1 class="mb-4">Available Tournament</h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 mb-5">
+        <div class="card border-0 bg-light shadow-sm pb-2">
+          <img class="card-img-top mb-2" src="https://assets.digination.id/crop/0x0:0x0/x/photo/2021/05/24/3657640278.jpg" alt="" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Tournament 1</h4>
+            <p class="card-text">
+              Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
+              ipsum duo et no et, ipsum ipsum erat duo amet clita duo
+            </p>
+          </div>
+          <div class="card-footer bg-transparent py-4 px-5">
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Level</strong>
+              </div>
+              <div class="col-6 py-1">Amateur</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Total Slots</strong>
+              </div>
+              <div class="col-6 py-1">20 Teams</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Time</strong>
+              </div>
+              <div class="col-6 py-1">08:00 - 10:00</div>
+            </div>
+            <div class="row">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Enter Fee Fee</strong>
+              </div>
+              <div class="col-6 py-1">$2</div>
+            </div>
+          </div>
+          <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-5">
+        <div class="card border-0 bg-light shadow-sm pb-2">
+          <img class="card-img-top mb-2" src="https://assets.digination.id/crop/0x0:0x0/x/photo/2021/05/24/3657640278.jpg" alt="" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Tournament 2</h4>
+            <p class="card-text">
+              Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
+              ipsum duo et no et, ipsum ipsum erat duo amet clita duo
+            </p>
+          </div>
+          <div class="card-footer bg-transparent py-4 px-5">
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Level</strong>
+              </div>
+              <div class="col-6 py-1">Amateur</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Total Slots</strong>
+              </div>
+              <div class="col-6 py-1">20 Teams</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Time</strong>
+              </div>
+              <div class="col-6 py-1">08:00 - 10:00</div>
+            </div>
+            <div class="row">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Enter Fee Fee</strong>
+              </div>
+              <div class="col-6 py-1">$2</div>
+            </div>
+          </div>
+          <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-5">
+        <div class="card border-0 bg-light shadow-sm pb-2">
+          <img class="card-img-top mb-2" src="https://assets.digination.id/crop/0x0:0x0/x/photo/2021/05/24/3657640278.jpg" alt="" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Tournament 3</h4>
+            <p class="card-text">
+              Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
+              ipsum duo et no et, ipsum ipsum erat duo amet clita duo
+            </p>
+          </div>
+          <div class="card-footer bg-transparent py-4 px-5">
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Level</strong>
+              </div>
+              <div class="col-6 py-1">Amateur</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Total Slots</strong>
+              </div>
+              <div class="col-6 py-1">20 Teams</div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Time</strong>
+              </div>
+              <div class="col-6 py-1">08:00 - 10:00</div>
+            </div>
+            <div class="row">
+              <div class="col-6 py-1 text-right border-right">
+                <strong>Enter Fee Fee</strong>
+              </div>
+              <div class="col-6 py-1">$2</div>
+            </div>
+          </div>
+          <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Join Tournament End-->
+<div class="container-fluid pt-5"></div>
+  <div class="container">
+    <div class="text-left pb-2">
+      <p class="section-title px-0">
+        <span class="px-2">Make your own Tournament</span>
+      </p>
+      <h1 class="mb-4">Create Tournament</h1>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Create Tournament</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
 {% endblock %}
