@@ -1,4 +1,5 @@
 from turtle import title
+from unicodedata import name
 from flask import render_template, request, redirect
 from app import app, db
 from app.models import Entry
@@ -9,31 +10,18 @@ jedi = "of the jedi"
 @app.route('/')
 @app.route('/index')
 def index():
-    # entries = [
-    #     {
-    #         'id' : 1,
-    #         'title': 'test title 1',
-    #         'description' : 'test desc 1',
-    #         'status' : True
-    #     },
-    #     {
-    #         'id': 2,
-    #         'title': 'test title 2',
-    #         'description': 'test desc 2',
-    #         'status': False
-    #     }
-    # ]
     entries = Entry.query.all()
     return render_template('content.html', entries=entries)
 
-@app.route('/input', methods=['POST'])
-def input():
+@app.route('/content', methods=['POST'])
+def content():
     if request.method == 'POST':
         form = request.form
-        judul = form.get('title')
+        namaTeam = form.get('Nama Team')
         desc = form.get('description')
-        if not judul or desc:
-            entry = Entry(title = judul, description = desc)
+        game = form.get('game')
+        if not namaTeam or desc:
+            entry = Entry(NamaTeam = namaTeam, description = desc, game = game)
             db.session.add(entry)
             db.session.commit()
             return redirect('/')

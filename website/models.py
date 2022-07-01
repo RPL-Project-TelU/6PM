@@ -23,3 +23,9 @@ class Entry(db.Model):
     title = db.Column(db.String(64), index=True, nullable=False)
     description = db.Column(db.String(120), index=True, nullable=False)
     status = db.Column(db.Boolean, default=False)
+
+class Team(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    namaTeam = db.Column(db.String(64),index=True, nullable=False)
+    description = db.Column(db.String(120), index=True, nullable=False)
+    game = db.Column(db.String(64), index=True, nullable=False)

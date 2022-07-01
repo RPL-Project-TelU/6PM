@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User
+from .models import Team, User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -64,3 +64,32 @@ def sign_up():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+
+@auth.route('/content', methods=['GET', 'POST'])
+def content():
+    entries = Team.query.order_by(Team.namaTeam).all()
+        
+    return render_template("content.html", user=current_user, entry = entries)
+
+@auth.route('/input', methods=['GET', 'POST'])
+def input():
+    if request.method == 'POST':
+        namaTeam = request.form.get('namaTeam')
+        description = request.form.get('description')
+        game = request.form.get('game')
+        
+        team = Team.query.filter_by(namaTeam=namaTeam).first()
+        if team:
+            flash('Nama Team already exists.', category='error')
+        elif description == "":
+            flash('description cannot be empty.',category='error')
+        elif game == "":
+            flash('game cannot be empty',category='error' )
+        else:
+    
+            new_team = Team (namaTeam=namaTeam, description=description, game=game)
+            db.session.add(new_team)
+            db.session.commit()
+            return redirect(url_for('views.content'))
+ 
+    return render_template("content.html", user=current_user)
