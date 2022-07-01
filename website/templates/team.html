@@ -1,0 +1,118 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+{% block content %}
+<br>
+<div class="text-center">
+    <p class="h1">JOIN SQUAD RIGHT NOW !!!</p>
+</div>
+<br>
+<div style="margin-left: 500px;">
+    <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#exampleModalLong">
+    Create Team
+    </button>
+</div>
+<br>
+<br>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">CREATE TEAM</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Username</label>
+                  <input type="Username" class="form-control" id="inputUsername4" placeholder="Username">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Team Name</label>
+                <input type="text" class="form-control" id="inputPhone" placeholder=" ">
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Description</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder=" ">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Import Logo</label>
+                  <input class="form-control" type="file" id="formFile">
+                  </select>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="Submit" class="btn btn-primary">Continue</button>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://asset-a.grid.id/crop/0x68:800x646/x/photo/2020/01/23/958423341.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Register
+          </button>
+          <br>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://dailyspin.id/wp-content/uploads/2020/11/RRQ-Logo-Tim.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Register
+          </button>
+          <br>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://img.esportsku.com/wp-content/uploads//2020/12/evos-1200x900.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Register
+          </button>
+          <br>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+from unicodedata import category
+from flask import Blueprint, jsonify, render_template, request, flash
+from flask_login import login_required, current_user
+from . import db
+import json
+
+
+views = Blueprint('views', __name__)
+
+@views.route('/', methods=['GET', 'POST'])
+@login_required
+def home():     
+    return render_template("home.html", user=current_user)  
+
+@views.route('/profile')
+@login_required
+def profile():
+    return render_template("profile.html", user=current_user)
+
+@views.route('/team')
+@login_required
+def team():
+    return render_template("team.html", user=current_user)
+
+@views.route('/tournament')
+@login_required
+def tournament():
+    return render_template("tournament.html", user=current_user)
