@@ -17,3 +17,8 @@ def home():
 def profile():
     return render_template("profile.html", user=current_user)
 
+@views.route('/news')
+@login_required
+def news():
+    return render_template("news.html", user=current_user)
+
