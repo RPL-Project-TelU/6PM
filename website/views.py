@@ -35,7 +35,7 @@ def team():
         tteam = request.form.get('name')
         Description = request.form.get('deskripsi')
   
-        with open(r"file.json", "a+") as file:
+        with open("a+") as file:
             data = {}
             data['Team'] = []
             data['Team'].append({
