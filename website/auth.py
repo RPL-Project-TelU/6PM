@@ -8,13 +8,13 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
-def getDark():
+def get_dark():
     file = 'website/config.ini'
     config = ConfigParser()
     config.read(file)
     return config['dark']['status']
 
-def setDark(mode):
+def set_dark(mode):
     file = 'website/config.ini'
     config = ConfigParser()
     config.read(file)
@@ -39,7 +39,7 @@ def login():
                 flash('Incorrect password, try again.', category='error')
         else:
             flash('Email does not exist.', category='error')
-    return render_template("login.html", user=current_user, dark = getDark(), write = setDark)
+    return render_template("login.html", user=current_user, dark = get_dark(), write = set_dark)
 
 
 
@@ -78,4 +78,4 @@ def sign_up():
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
 
-    return render_template("sign_up.html", user=current_user, dark = getDark(), write = setDark)
+    return render_template("sign_up.html", user=current_user, dark = get_dark(), write = set_dark)
