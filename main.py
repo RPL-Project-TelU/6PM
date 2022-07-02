@@ -1,3 +1,4 @@
+import unittest
 from website import create_app
 
 app = create_app()
